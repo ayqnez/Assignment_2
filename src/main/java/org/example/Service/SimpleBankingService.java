@@ -21,7 +21,7 @@ public class SimpleBankingService implements ServiceInterface {
         Account account = repository.getAccount(id);
         if (account != null) {
             account.deposit(amount);
-            System.out.println("Deposited " + amount + " to account with id: " + id);
+            System.out.println("💰 Deposited " + amount + " to account with id: " + id + " ✅");
         }
     }
 
@@ -30,10 +30,10 @@ public class SimpleBankingService implements ServiceInterface {
         Account account = repository.getAccount(id);
         if (account != null) {
             account.withdraw(amount);
-            System.out.println("Withdrew " + amount + " from account with id: " + id);
+            System.out.println("💸 Withdrew " + amount + " from account with id: " + id + " ✅");
             return true;
         } else {
-            System.out.println("Withdrawal failed for account with id: " + id);
+            System.out.println("❌ Withdrawal failed for account with id: " + id + " ⚠️");
             return false;
         }
     }

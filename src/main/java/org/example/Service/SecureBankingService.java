@@ -21,9 +21,9 @@ public class SecureBankingService implements ServiceInterface {
     public void deposit(int id, double amount) {
         Account account = repository.getAccount(id);
         if (account != null) {
-            System.out.println("Performing additional security checks before deposit...");
+            System.out.println("🔒 Performing additional security checks before deposit...");
             account.deposit(amount);
-            System.out.println("Deposited " + amount + " to account with id: " + id + " securely.");
+            System.out.println("💰 Deposited " + amount + " to account with id: " + id + " securely ✅");
         }
     }
 
@@ -31,12 +31,12 @@ public class SecureBankingService implements ServiceInterface {
     public boolean withdraw(int id, double amount) {
         Account account = repository.getAccount(id);
         if (account != null) {
-            System.out.println("Performing additional security checks before withdraw...");
+            System.out.println("🔒 Performing additional security checks before withdraw...");
             account.withdraw(amount);
-            System.out.println("Withdrawn " + amount + " from account with id: " + id + " securely.");
+            System.out.println("💸 Withdrawn " + amount + " from account with id: " + id + " securely ✅");
             return true;
         } else {
-            System.out.println("Withdrawal failed for account with id: " + id);
+            System.out.println("❌ Withdrawal failed for account with id: " + id + " ⚠️");
             return false;
         }
     }
